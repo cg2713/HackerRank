@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import sys
+
+def migratoryBirds(n, ar):
+    count = [0] * 6 #generating an array with set value of 6 because it is garenteed that valeus will be from 1 - 5
+    
+    for bird in ar:
+        count[bird] += 1 #going thought array and if 1 - 5 is found then increment sub array of 1-5 index by 1
+    
+    return count.index(max(count)) # return the index of the max found and the lowest index value
+
+    # dict = {}
+    
+    # for i in arr:
+    #     if dict.get(i) == None:
+    #         dict[i] = 1
+    #     else:
+    #         dict[i] += 1
+    
+    # large = 0
+    # for i in dict:
+    #     if dict.get(i) > large:
+    #         large = dict.get(i)
+        
+    #print(max(dict.values()))
+    # Write your code here
+
+n = int(input().strip())
+ar = list(map(int, input().strip().split(' ')))
+result = migratoryBirds(n, ar)
+print(result)
